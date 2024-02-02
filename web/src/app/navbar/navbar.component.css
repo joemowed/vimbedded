@@ -3,7 +3,7 @@
   /* Firefox */
   * {
     scrollbar-width: auto;
-    scrollbar-color: #44469c #6468dd;
+    scrollbar-color: #777df4 rgba(0,0,0,0);
   }
 
   /* Chrome, Edge, and Safari */
@@ -12,12 +12,24 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: #6468dd;
+    background: rgba(0,0,0,0);
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #44469c;
+    background-color: #777df4;
     border-radius: 0px;
     border: 0px none #ac2020;
   }
+}
+.connectionStatusIconDisconnected{
+animation: mymove .75s infinite;
+
+}
+
+@keyframes mymove {
+  from {
+  @apply fill-red-400}
+
+  to {
+  @apply fill-red-600}
 }
