@@ -5,7 +5,9 @@
     [ngClass]="(connectionStatus == ConnectionStateService.connectionStates.connected)?'fill-green-400':'connectionStatusIconDisconnected'">
     <circle cx="50%" cy="50%" r="30%" />
   </svg>
-  <p class="text-center text-5xl text-gray-200/50 font-semibold font-mono col-span-2 ml-0 mr-auto h-fit my-auto w-fit ">
+  <p class="text-center text-2xl text-gray-200/50 font-semibold font-mono col-span-2 ml-0 mr-auto h-fit my-auto w-fit ">
+    {{deviceName}}</p>
+  <p class="text-center text-2xl text-gray-200/50 font-semibold font-mono col-span-2 ml-0 mr-auto h-fit my-auto w-fit ">
     {{connectionStatus}}
   </p>
   <img src="../../assets/settingsIcon.svg" draggable="false" alt="config" (click)="settingsClickHandler()"
@@ -41,10 +43,23 @@
         }
       </div>
     </div>
-    <div id="svd upload" class="row-span-2 grid grid-cols-3 justify-center grid-rows-1 ">
-      <p class="text-xl my-auto h-fit text-center w-full">Upload an SVD file</p>
+    <div id="svd upload" class="row-span-2 grid grid-cols-2 justify-center grid-rows-1 ">
+      <div class="my-auto h-fit">
+        @if(this.SvdParserService.currentLoadedFile == "No file Loaded"){
 
-      <input type="file" id="myFile" name="filename" class="m-auto  h-fit w-fit col-span-2">
+        <p class="text-xl my-auto h-fit text-center w-full">Upload an SVD file</p>
+        } @else{
+        <p class="text-xl my-auto h-fit text-center w-full">Currently loaded File:</p>
+        }
+
+        <p class="text-lg my-auto h-fit text-center text-gray-500/80">{{this.SvdParserService.currentLoadedFile}}</p>
+
+      </div>
+
+
+
+      <input type="file" id="myFile" name="filename" (change)="onFileSelected($event)" class="hidden">
+      <label for="myFile" class="default-button my-auto ml-auto">Upload SVD</label>
 
     </div>
   </div>

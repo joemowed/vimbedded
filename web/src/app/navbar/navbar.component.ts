@@ -19,7 +19,9 @@ export class NavbarComponent {
   selected = "option2";
   allowedPollingRates: Array<number>;
   selectedPollingRate: Number;
+  svdLoadAnnouncer$: Observable<boolean>;
   connectionStatus: String = "test_string";
+  deviceName: String = "";
   private connectionStatus$: Observable<string>;
   constructor(ConnectionStateService: ConnectionStateService, SvdParserService: SvdParserService) {
     this.settingsVisible = false;
@@ -28,12 +30,14 @@ export class NavbarComponent {
     this.ConnectionStateService = ConnectionStateService;
     this.connectionStatus$ = this.ConnectionStateService.connectionStateObservable();
     this.SvdParserService = SvdParserService;
+    this.svdLoadAnnouncer$ = this.SvdParserService.getSubToSvdLoadAnnouncer();
+    this.svdLoadAnnouncer$.subscribe(this.svdLoadAnnouncerCallback);
 
     this.connectionStatus$.subscribe(state => {
       this.connectionStatus = state;
     })
 
-    this.ConnectionStateService.updateConnectionState();
+
   }
   settingsClickHandler() {
     this.settingsVisible = !this.settingsVisible;
@@ -46,7 +50,19 @@ export class NavbarComponent {
     return (rate == this.selectedPollingRate);
   }
 
-
+  public onFileSelected(event: any) {
+    const svdFile: File = event.target.files[0];
+    if (svdFile) {
+      this.SvdParserService.parseSvd(svdFile);
+    }
+  }
+  private svdLoadAnnouncerCallback(svdLoaded: boolean) {
+    if (svdLoaded) {
+    }
+    else {
+      this.deviceName = "No Device Loaded";
+    }
+  }
 
 
 }

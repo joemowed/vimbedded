@@ -6,6 +6,9 @@
   .boldGrayText-lg{
     @apply text-lg font-bold text-gray-700
   }
+  .default-button{
+    @apply bg-indigo-400/50 hover:bg-indigo-400/20  text-xl active:bg-white/30 select-none p-4 border-4 border-indigo-500 rounded-xl w-fit h-fit
+  }
 
 }
 

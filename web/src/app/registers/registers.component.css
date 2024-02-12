@@ -1,0 +1,6 @@
+.pokeCard {
+  transition-timing-function: ease-out;
+  transition-duration: 70ms;
+  transition-delay: 0s;
+  perspective: 800px;
+}
