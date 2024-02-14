@@ -1,13 +1,6 @@
-interface RelCoords {
-  isInBox: Boolean,
-  percentX: number,
-  percentY: number
-}
 import { Component } from '@angular/core';
 import { PeriphrialGroupComponent } from './periphrial-group/periphrial-group.component';
-
 import { Peripheral, SvdParserService } from '../svd-parser.service';
-import { Observable } from 'rxjs';
 @Component({
   selector: 'app-registers',
   standalone: true,
@@ -21,11 +14,8 @@ export class RegistersComponent {
   constructor(SvdParserService: SvdParserService) {
     this.SvdParserService = SvdParserService;
     this.SvdParserService.getSubToSvdLoadAnnouncer().subscribe((svdLoaded) => this.svdLoadAnnouncerCallback(svdLoaded));
-
   }
   private svdLoadAnnouncerCallback(svdLoaded: boolean) {
     this.periphrials = this.SvdParserService.getPeripherials()
   }
-
 }
-
