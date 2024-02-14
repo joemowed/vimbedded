@@ -1,3 +1,9 @@
-<div class="mt-14 p-28 bg-gray-700">
-  <img class="aspect-auto w-[40vw] pokeCard" id="pokeCardID" src="../../assets/pokeBack.png" />
+<div class="pt-4 bg-indigo-300 overflow-y-scroll  h-[92vh] mb-8 snap-y snap-mandatory">
+  @if(periphrials){
+  @for(each of periphrials; track each;){
+
+  <app-periphrial-group [periphrial]="each" class="snap-start"></app-periphrial-group>
+
+  }
+  }
 </div>

@@ -6,33 +6,44 @@ import xml2js from 'xml2js';
 })
 export class SvdParserService {
 
-  private mainJson: Object;
+  private mainJson: SvdJson | null;
   public currentLoadedFile: string = "No file Loaded";
   private svdLoadAnnouncer: BehaviorSubject<boolean>;
   constructor() {
-    this.mainJson = {};
+
+    this.mainJson = null;
     this.svdLoadAnnouncer = new BehaviorSubject(false);
 
+    if (localStorage.getItem("SVDJSON")) {
+      this.mainJson = JSON.parse(localStorage.getItem("SVDJSON")!);
+      this.currentLoadedFile = localStorage.getItem("SVDJSONFILENAME")!;
+      this.svdLoadAnnouncer.next(true);
+    }
+
+  }
+  public getPeripherials(): Peripheral[] {
+    if (!this.mainJson?.peripherals) {
+      console.error("attempt to access peripherals without them first existing");
+    }
+    return this.mainJson!.peripherals;
   }
   public getSubToSvdLoadAnnouncer(): Observable<boolean> {
     return this.svdLoadAnnouncer.asObservable();
   }
-  public getJson() {
-    if (this.mainJson) {
-      return this.mainJson;
+  public getJson(): SvdJson {
+    if (!this.mainJson) {
+      console.error(" tried to get mainJSON, but it is null")
     }
-    else {
-      return {};
-    }
+    return this.mainJson!;
   }
   public parseSvd(svdFile: File) {
     this.currentLoadedFile = svdFile.name;
-    svdFile.text().then((data) => { this.parseSvdFromString(data); })
+    svdFile.text().then((data) => { this.parseSvdFromString(data, svdFile.name); })
       .catch(console.error)
 
   }
-  private parseSvdFromString(svdString: string) {
-    xml2js.parseString(svdString, (err, result) => this.svdParseCallback(err, result, svdString));
+  private parseSvdFromString(svdString: string, fileName: string) {
+    xml2js.parseString(svdString, (err, result) => this.svdParseCallback(err, result, fileName));
 
 
   }
@@ -42,8 +53,19 @@ export class SvdParserService {
     }
     else {
       this.mainJson = result;
-      this.svdLoadAnnouncer.next(true);
-      console.log(this.mainJson);
+      try {
+        //@ts-ignore
+        this.mainJson = this.mainJson.device;
+        //@ts-ignore
+        this.mainJson.peripherals = this.mainJson.peripherals[0].peripheral;
+        this.svdLoadAnnouncer.next(true);
+        localStorage.setItem("SVDJSON", JSON.stringify(this.mainJson))
+
+        localStorage.setItem("SVDJSONFILENAME", fileName);
+      }
+      catch {
+        console.error("could not manipulate json from svd file");
+      }
     }
   }
   public getCurrentFile(): string {
@@ -51,12 +73,9 @@ export class SvdParserService {
   }
 
 
-  getPeriphrials() {
-
-  }
 
 }
-export interface svdJson {
+export interface SvdJson {
   $: {
     [key: string]: string;
   };
@@ -75,5 +94,41 @@ export interface svdJson {
   vendorID: string[];
   version: string[];
   width: string[];
-  peripherals: string[];
+  peripherals: Peripheral[];
+};
+export interface Peripheral {
+  addressBlock: AddressBlock[];
+  baseAddress: string[];
+  groupName: string[];
+  interrupt: Interrupt[];
+  name: string[];
+  prependToName: string[];
+  registers: Registers[];
+  description: string[];
+
+};
+export interface Registers {
+  register: Register[];
+};
+export interface Register {
+  addressOffset: string[];
+  description: string[];
+  name: string[];
+  size: string[];
+  fields: Field[];
+};
+export interface Interrupt {
+  name: string[];
+  value: string[];
+};
+export interface AddressBlock {
+  offset: string[];
+  size: string[];
+  usage: string[];
+};
+export interface Field {
+  bitOffset: string[];
+  bitWidth: string[];
+  description: string[];
+  name: string[];
 };

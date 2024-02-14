@@ -1,3 +1,17 @@
-<div>
-  <app-register></app-register>
+<div (click)="groupTitleBarClickHandler()"
+  class="w-full max-h-20    bg-indigo-300 hover:bg-indigo-400 active:bg-indigo-400/90   select-none grid grid-cols-3  ">
+  <div class="w-full h-full grid grid-cols-2 my-auto">
+    <img src="../../../assets/angle_right.svg" class="h-24 py-4 aspect-square my-auto  transition-all delay-150  "
+      [ngClass]="isExpanded? 'rightAngleExpanded':'rightAngleDefault'" />
+    <p class="font-mono  font-thin  text-5xl  my-auto">{{name}}</p>
+  </div>
+  <p class="text-2xl font-mono text-center my-auto max-w-full px-4">{{description}}</p>
+  <p class="text-2xl  font-mono my-auto">{{baseAddress}}</p>
+</div>
+<div class="w-full">
+  @if(isExpanded){
+  @for(each of periphrial.registers[0].register;track each){
+  <app-register [register]="each"></app-register>
+  }
+  }
 </div>
