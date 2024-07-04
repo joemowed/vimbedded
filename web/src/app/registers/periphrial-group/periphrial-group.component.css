@@ -1,7 +1,0 @@
-.rightAngleExpanded {
-  @apply rotate-90 bg-transparent
-}
-
-.rightAngleDefault {
-  @apply rotate-0 bg-transparent
-}
