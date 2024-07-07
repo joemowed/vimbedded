@@ -1,0 +1,3 @@
+/home/jmaloney/Documents/embgdb/launcher/build/CMakeFiles/launcher.exe.dir
+/home/jmaloney/Documents/embgdb/launcher/build/CMakeFiles/edit_cache.dir
+/home/jmaloney/Documents/embgdb/launcher/build/CMakeFiles/rebuild_cache.dir
