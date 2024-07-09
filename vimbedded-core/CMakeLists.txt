@@ -14,6 +14,7 @@ SET (CMAKE_RANLIB  "/usr/bin/llvm-ranlib")
 #This static definition of the include and library directories is an issue
 set(BOOST_INCLUDEDIR /usr/include)
 SET (BOOST_LIBRARYDIR "/usr/lib/x86_64-linux-gnu")
+
 find_package(Boost COMPONENTS program_options REQUIRED)
 project(vimbedded-core VERSION 1.0
     DESCRIPTION "Launcher for embedded toolchain"

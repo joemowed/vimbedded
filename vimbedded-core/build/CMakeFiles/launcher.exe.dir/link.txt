@@ -1,1 +1,0 @@
-/usr/bin/clang++ -O2 CMakeFiles/launcher.exe.dir/src/main.cpp.o -o launcher.exe 

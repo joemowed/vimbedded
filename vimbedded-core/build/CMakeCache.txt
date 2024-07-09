@@ -203,15 +203,6 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-launcher_BINARY_DIR:STATIC=/home/jmaloney/Documents/vimbedded/vimbedded-core/build
-
-//Value Computed by CMake
-launcher_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-launcher_SOURCE_DIR:STATIC=/home/jmaloney/Documents/vimbedded/vimbedded-core
-
-//Value Computed by CMake
 vimbedded-core_BINARY_DIR:STATIC=/home/jmaloney/Documents/vimbedded/vimbedded-core/build
 
 //Value Computed by CMake
