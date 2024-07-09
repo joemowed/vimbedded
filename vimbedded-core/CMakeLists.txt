@@ -10,6 +10,7 @@ SET (CMAKE_LINKER  "/usr/bin/llvm-ld")
 SET (CMAKE_NM      "/usr/bin/llvm-nm")
 SET (CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
 SET (CMAKE_RANLIB  "/usr/bin/llvm-ranlib")
+
 #This static definition of the include and library directories is an issue
 set(BOOST_INCLUDEDIR /usr/include)
 SET (BOOST_LIBRARYDIR "/usr/lib/x86_64-linux-gnu")
