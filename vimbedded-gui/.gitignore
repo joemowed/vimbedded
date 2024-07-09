@@ -2,3 +2,5 @@
 /node_modules
 #output directory of the tsc build for electron
 /electron/build
+/electron/tempAppStorage
+/electron/tempProjectStorage
