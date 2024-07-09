@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/jmaloney/Documents/embgdb/launcher/CMakeLists.txt"
+  "/home/jmaloney/Documents/vimbedded/vimbedded-core/CMakeLists.txt"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
@@ -21,6 +21,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Compiler/Clang-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/Clang.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.28/Modules/FindBoost.cmake"
+  "/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
+  "/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-Clang-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake"
@@ -42,5 +45,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/launcher.exe.dir/DependInfo.cmake"
+  "CMakeFiles/vimbedded-core.exe.dir/DependInfo.cmake"
   )

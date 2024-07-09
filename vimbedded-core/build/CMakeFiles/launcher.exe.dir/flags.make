@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/jmaloney/Documents/embgdb/launcher/src/include
+CXX_INCLUDES = -I/home/jmaloney/Documents/vimbedded/vimbedded-core/src/include
 
 CXX_FLAGS = -O2 -std=gnu++23
 

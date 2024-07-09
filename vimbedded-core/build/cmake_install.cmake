@@ -1,4 +1,4 @@
-# Install script for directory: /home/jmaloney/Documents/embgdb/launcher
+# Install script for directory: /home/jmaloney/Documents/vimbedded/vimbedded-core
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jmaloney/Documents/embgdb/launcher/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jmaloney/Documents/vimbedded/vimbedded-core/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

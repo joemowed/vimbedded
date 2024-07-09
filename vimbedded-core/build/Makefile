@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jmaloney/Documents/embgdb/launcher
+CMAKE_SOURCE_DIR = /home/jmaloney/Documents/vimbedded/vimbedded-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jmaloney/Documents/embgdb/launcher/build
+CMAKE_BINARY_DIR = /home/jmaloney/Documents/vimbedded/vimbedded-core/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jmaloney/Documents/embgdb/launcher/build/CMakeFiles /home/jmaloney/Documents/embgdb/launcher/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jmaloney/Documents/vimbedded/vimbedded-core/build/CMakeFiles /home/jmaloney/Documents/vimbedded/vimbedded-core/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jmaloney/Documents/embgdb/launcher/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jmaloney/Documents/vimbedded/vimbedded-core/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named launcher.exe
+# Target rules for targets named vimbedded-core.exe
 
 # Build rule for target.
-launcher.exe: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 launcher.exe
-.PHONY : launcher.exe
+vimbedded-core.exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vimbedded-core.exe
+.PHONY : vimbedded-core.exe
 
 # fast build rule for target.
-launcher.exe/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/launcher.exe.dir/build.make CMakeFiles/launcher.exe.dir/build
-.PHONY : launcher.exe/fast
+vimbedded-core.exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vimbedded-core.exe.dir/build.make CMakeFiles/vimbedded-core.exe.dir/build
+.PHONY : vimbedded-core.exe/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/launcher.exe.dir/build.make CMakeFiles/launcher.exe.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vimbedded-core.exe.dir/build.make CMakeFiles/vimbedded-core.exe.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -142,7 +142,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/launcher.exe.dir/build.make CMakeFiles/launcher.exe.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vimbedded-core.exe.dir/build.make CMakeFiles/vimbedded-core.exe.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -150,7 +150,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/launcher.exe.dir/build.make CMakeFiles/launcher.exe.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vimbedded-core.exe.dir/build.make CMakeFiles/vimbedded-core.exe.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... launcher.exe"
+	@echo "... vimbedded-core.exe"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

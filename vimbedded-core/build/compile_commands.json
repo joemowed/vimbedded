@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/home/jmaloney/Documents/embgdb/launcher/build",
-  "command": "/usr/bin/clang++  -I/home/jmaloney/Documents/embgdb/launcher/src/include -O2 -std=gnu++23 -o CMakeFiles/launcher.exe.dir/src/main.cpp.o -c /home/jmaloney/Documents/embgdb/launcher/src/main.cpp",
-  "file": "/home/jmaloney/Documents/embgdb/launcher/src/main.cpp",
-  "output": "CMakeFiles/launcher.exe.dir/src/main.cpp.o"
+  "directory": "/home/jmaloney/Documents/vimbedded/vimbedded-core/build",
+  "command": "/usr/bin/clang++  -I/home/jmaloney/Documents/vimbedded/vimbedded-core/src/include -O2 -std=gnu++23 -o CMakeFiles/vimbedded-core.exe.dir/src/main.cpp.o -c /home/jmaloney/Documents/vimbedded/vimbedded-core/src/main.cpp",
+  "file": "/home/jmaloney/Documents/vimbedded/vimbedded-core/src/main.cpp",
+  "output": "CMakeFiles/vimbedded-core.exe.dir/src/main.cpp.o"
 }
 ]
