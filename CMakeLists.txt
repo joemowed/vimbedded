@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.25)
+include_guard()
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_COMPILER             "/usr/bin/clang++")
+set(ENABLE_FAST_MATH ON)
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS "-O0 -g")
+SET (CMAKE_C_COMPILER             "/usr/bin/clang")
+SET (CMAKE_AR      "/usr/bin/llvm-ar")
+SET (CMAKE_LINKER  "/usr/bin/llvm-ld")
+SET (CMAKE_NM      "/usr/bin/llvm-nm")
+SET (CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
+SET (CMAKE_RANLIB  "/usr/bin/llvm-ranlib")
+project(mcuview VERSION 1.0
+    DESCRIPTION ""
+    LANGUAGES CXX)
+file(GLOB SOURCES "src/*.cpp")
+
+include_directories(src/include)
+set(exe_name ${CMAKE_PROJECT_NAME} )
+string(CONCAT exe_name ${exe_name} .exe)
+message(${exe_name})
+add_executable(${exe_name} ${SOURCES})
+
